@@ -13,7 +13,7 @@ import Footer from "components/footers/FiveColumnWithInputForm.js";
 
 export default () => {
   const Subheading = tw.span`tracking-wider text-sm font-medium`;
-  const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  const HighlightedText = tw.span`bg-blue-900 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
   const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
@@ -24,7 +24,6 @@ export default () => {
         heading={<>Brianne Ewell<HighlightedText>Web Developer</HighlightedText></>}
         subheading={<Subheading>Web Developer</Subheading>}
         description="Full stack developer with expertise in product design, optimizing user experience, and problem-solving"
-        imageSrc="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
         imageDecoratorBlob={true}
         primaryButtonText="Order Now"
        />
@@ -42,12 +41,7 @@ export default () => {
            I recently purchased and renovated my first home in Providence, Utah. I live there with my wife, Merissa, and our dog, Casey. I enjoy being outdoors, kayaking, hammocking, and camping.
          </Description>
        }
-         buttonRounded={false}
-         textOnLeft={false}
-         primaryButtonText="Latest Offers"
-         imageSrc={
-           "https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
-         }
+         imageSrc="./images/headerIMG.jpg"
          imageCss={imageCss}
          imageDecoratorBlob={true}
          imageDecoratorBlobCss={tw`left-1/2 -translate-x-1/2 md:w-20 md:h-32 opacity-25`}

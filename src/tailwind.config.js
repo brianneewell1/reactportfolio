@@ -178,7 +178,7 @@ module.exports = {
       '128': '32rem',
       '144': '36rem',
     },
-    backgroundColor: theme => theme('colors'),
+    backgroundColor: bg-blue-900,
     backgroundPosition: {
       bottom: 'bottom',
       center: 'center',

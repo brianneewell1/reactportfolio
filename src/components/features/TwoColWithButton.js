@@ -2,14 +2,13 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
-import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import TeamIllustrationSrc from "images/team-illustration-2.svg";
+import TeamIllustrationSrc from "../../images/bri.png";
 import {ReactComponent as SvgDotPattern } from "images/dot-pattern.svg"
+import '../../App.css';
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
-const LeftColumn = tw.div`relative lg:w-6/12 lg:pr-12 flex-shrink-0 text-center lg:text-left`;
+const LeftColumn = tw.div`relative lg:w-2/6 lg:pr-12 flex-shrink-0 text-center lg:text-left`;
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
 
 const Image = styled.img(props => [
@@ -23,31 +22,18 @@ const DecoratorBlob = styled(SvgDotPattern)(props => [
 ])
 
 const TextContent = tw.div`lg:py-8 text-center md:text-left`;
-
-const Subheading = tw(SubheadingBase)`text-center md:text-left`;
-const Heading = tw(
-  SectionHeading
-)`mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
+const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
+const Heading = tw.h1`font-bold text-blue-900 md:text-5xl leading-snug max-w-3xl`
 const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100`;
 
-const PrimaryButton = styled(PrimaryButtonBase)(props => [
-  tw`mt-8 md:mt-8 text-sm inline-block mx-auto md:mx-0`,
-  props.buttonRounded && tw`rounded-full`
-]);
-
-
 export default ({
-  subheading = "",
   heading = (
     <>
      
     </>
   ),
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  primaryButtonText = "Learn More",
-  primaryButtonUrl = "https://timerse.com",
-  imageSrc = "https://drive.google.com/file/d/1_QBDEWMiTGlZUpCUFnNI-RcuvNV_VSGd/view?usp=sharing",
-  buttonRounded = true,
+  imageSrc = TeamIllustrationSrc,
   imageRounded = true,
   imageBorder = false,
   imageShadow = false,
@@ -62,12 +48,17 @@ export default ({
     <Container>
       <TwoColumn>
         <LeftColumn>
-          <Image css={imageCss} src={imageSrc} imageBorder={imageBorder} imageShadow={imageShadow} imageRounded={imageRounded}/>
-          {imageDecoratorBlob && <DecoratorBlob css={imageDecoratorBlobCss} />}
-        </LeftColumn>
+        <IllustrationContainer>
+              <img
+                className="hero-image"
+                src= {TeamIllustrationSrc}
+                alt="Bri Ewell"
+              />
+              {imageDecoratorBlob}
+            </IllustrationContainer>
+         </LeftColumn>
         <RightColumn textOnLeft={textOnLeft}>
           <TextContent>
-            <Subheading>{subheading}</Subheading>
             <Heading>{heading}</Heading>
             <Description>{description}</Description>
             </TextContent>
