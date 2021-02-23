@@ -1,3 +1,4 @@
+//First Section//
 import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -5,8 +6,6 @@ import tw from "twin.macro";
 import { css } from "styled-components/macro";
 import Header from "../headers/light.js";
 import ReactModalAdapter from "../../helpers/ReactModalAdapter.js";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../images/dot-pattern.svg";
 import DesignIllustration from "../../images/DSC_4721 (1).jpg";
 import '../../App.css';
 
@@ -19,14 +18,6 @@ const Heading = tw.h1`font-bold text-blue-900 md:text-5xl leading-snug max-w-3xl
 const Paragraph = tw.p`my-5 lg:my-8 text-sm lg:text-base font-medium text-gray-600 max-w-lg mx-auto lg:mx-0`;
 
 const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
-
-// Random Decorator Blobs (shapes that you see in background)
-const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
-  ${tw`pointer-events-none fill-current text-gray-500 opacity-5 absolute left-0 bottom-0 h-64 w-64 transform -translate-x-2/3  -z-10`}
-`;
-const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
-  ${tw`pointer-events-none fill-current text-gray-500 opacity-15 absolute w-32 h-32 right-0 bottom-0 transform translate-x-10 translate-y-10 -z-10`}
-`;
 
 const StyledModal = styled(ReactModalAdapter)`
   &.mainHeroModal__overlay {
@@ -44,7 +35,6 @@ export default ({
   heading = "",
  description="",
   imageSrc=DesignIllustration,
-  imageDecoratorBlob = false,
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -66,12 +56,10 @@ export default ({
                 src={imageSrc}
                 alt="Bri Ewell"
               />
-              {imageDecoratorBlob && <DecoratorBlob2 />}
             </IllustrationContainer>
           </RightColumn>
         </TwoColumn>
-        <DecoratorBlob1 />
-        <StyledModal
+         <StyledModal
           closeTimeoutMS={300}
           className="mainHeroModal"
           isOpen={modalIsOpen}

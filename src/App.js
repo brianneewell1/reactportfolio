@@ -2,21 +2,20 @@ import React from "react";
 import tw from "twin.macro";
 import './App.css';
 import Hero from "components/hero/TwoColumnWithVideo.js";
-import Features from "components/features/ThreeColSimple.js";
+// import Features from "components/features/ThreeColSimple.js";
 import MainFeature from "components/features/TwoColWithButton.js";
-import MainFeature2 from "components/features/TwoColSingleFeatureWithStats2.js";
-import TabGrid from "components/cards/TabCardGrid.js";
-import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
-import DownloadApp from "components/cta/DownloadApp.js";
-import Footer from "components/footers/FiveColumnWithInputForm.js";
+//import MainFeature2 from "components/features/TwoColSingleFeatureWithStats2.js";
+import TabGrid from "components/cards/ProfileThreeColGrid.js";
+// import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
+// import Footer from "components/footers/FiveColumnWithInputForm.js";
 
 
 export default () => {
   const Subheading = tw.span`tracking-wider text-sm font-medium`;
   const HighlightedText = tw.span`bg-blue-900 text-gray-100 px-4 transform -skew-x-12 inline-block`;
-  const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
-  const Description = tw.span`inline-block mt-8`;
-  const imageCss = tw`rounded-4xl`;
+  const HighlightedTextInverse = tw.span`bg-gray-100 text-blue-900 px-4 transform -skew-x-12 inline-block`;
+  const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-gray-600`;
+  const imageCss = tw`rounded-3xl`;
 
   return (
     <>
@@ -27,6 +26,15 @@ export default () => {
         imageDecoratorBlob={true}
         primaryButtonText="Order Now"
        />
+       {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
+     
+     <TabGrid
+     heading={
+       <>
+         Checkout my <HighlightedText>Portfolio</HighlightedText>
+       </>
+     }
+   />  
        <MainFeature
        heading={
          <>
@@ -41,21 +49,13 @@ export default () => {
            I recently purchased and renovated my first home in Providence, Utah. I live there with my wife, Merissa, and our dog, Casey. I enjoy being outdoors, kayaking, hammocking, and camping.
          </Description>
        }
-         imageSrc="./images/headerIMG.jpg"
+         imageSrc="/src/images/bri.jpg"
          imageCss={imageCss}
          imageDecoratorBlob={true}
-         imageDecoratorBlobCss={tw`left-1/2 -translate-x-1/2 md:w-20 md:h-32 opacity-25`}
+         imageDecoratorBlobCss={tw`left-auto -translate-x-1/2 md:w-20 md:h-32 opacity-25`}
        />
     
-     {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
      
-     <TabGrid
-     heading={
-       <>
-         Checkout my <HighlightedText>Portfolio</HighlightedText>
-       </>
-     }
-   />  
    </>
   );
 }

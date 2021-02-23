@@ -1,3 +1,5 @@
+//About Me Section//
+
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -12,19 +14,15 @@ const LeftColumn = tw.div`relative lg:w-2/6 lg:pr-12 flex-shrink-0 text-center l
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
 
 const Image = styled.img(props => [
-  props.imageRounded && tw`rounded`,
+  props.imageRounded && tw`rounded-lg`,
   props.imageBorder && tw`border`,
   props.imageShadow && tw`shadow`,
 ]);
 
-const DecoratorBlob = styled(SvgDotPattern)(props => [
-  tw`w-20 h-20 absolute right-0 bottom-0 transform translate-x-1/2 translate-y-1/2 fill-current text-primary-500 -z-10`,
-])
-
 const TextContent = tw.div`lg:py-8 text-center md:text-left`;
 const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
 const Heading = tw.h1`font-bold text-blue-900 md:text-5xl leading-snug max-w-3xl`
-const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100`;
+const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-gray-600`;
 
 export default ({
   heading = (
@@ -38,8 +36,6 @@ export default ({
   imageBorder = false,
   imageShadow = false,
   imageCss = null,
-  imageDecoratorBlob = false,
-  imageDecoratorBlobCss = null,
   textOnLeft = true
 }) => {
   // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
@@ -54,8 +50,7 @@ export default ({
                 src= {TeamIllustrationSrc}
                 alt="Bri Ewell"
               />
-              {imageDecoratorBlob}
-            </IllustrationContainer>
+             </IllustrationContainer>
          </LeftColumn>
         <RightColumn textOnLeft={textOnLeft}>
           <TextContent>

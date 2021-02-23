@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
@@ -47,7 +49,12 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"
   },
-  
-    "plugins": ["babel-plugin-styled-components"]
+  "plugins": [
+    "babel-plugin-styled-components"
+  ],
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js"
+    }
   }
-
+}
