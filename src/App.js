@@ -1,7 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
 import './App.css';
-import Hero from "components/hero/TwoColumnWithVideo.js";
+import Hero from "components/hero/main.js";
 import MainFeature from "components/features/AboutMe.js";
 import Budget from "components/hero/budget.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
