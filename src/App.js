@@ -2,12 +2,15 @@ import React from "react";
 import tw from "twin.macro";
 import './App.css';
 import Hero from "components/hero/TwoColumnWithVideo.js";
-// import Features from "components/features/ThreeColSimple.js";
-import MainFeature from "components/features/TwoColWithButton.js";
-//import MainFeature2 from "components/features/TwoColSingleFeatureWithStats2.js";
-import TabGrid from "components/cards/ProfileThreeColGrid.js";
-// import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
-// import Footer from "components/footers/FiveColumnWithInputForm.js";
+import MainFeature from "components/features/AboutMe.js";
+import Budget from "components/hero/budget.js";
+import Footer from "components/footers/MiniCenteredFooter.js";
+import Workout from "components/hero/workout.js"
+import Blog from "components/hero/blog.js"
+import Pet from "components/hero/petcetera.js"
+import Booze from "components/hero/booze.js"
+import Team from "components/hero/team.js"
+import Header from "components/headers/light.js"
 
 
 export default () => {
@@ -19,22 +22,20 @@ export default () => {
 
   return (
     <>
-        <Hero
-        heading={<>Brianne Ewell<HighlightedText>Web Developer</HighlightedText></>}
-        subheading={<Subheading>Web Developer</Subheading>}
+      <Hero
+        heading={<>Bri Ewell  <HighlightedText> Web Developer</HighlightedText></>}
         description="Full stack developer with expertise in product design, optimizing user experience, and problem-solving"
-        imageDecoratorBlob={true}
-        primaryButtonText="Order Now"
-       />
-       {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
-     
-     <TabGrid
-     heading={
-       <>
-         Checkout my <HighlightedText>Portfolio</HighlightedText>
-       </>
-     }
+      />
+           
+     <Budget
+     heading={<>Progressive Budget</>}
+     description="React project that allows users to track expenses online and offline with a dynamically created table and graph"
    />  
+   <Workout />
+   <Blog />
+   <Pet />
+   <Booze />
+   <Team />
        <MainFeature
        heading={
          <>
@@ -54,8 +55,7 @@ export default () => {
          imageDecoratorBlob={true}
          imageDecoratorBlobCss={tw`left-auto -translate-x-1/2 md:w-20 md:h-32 opacity-25`}
        />
-    
-     
+      <Footer />
    </>
   );
 }

@@ -6,6 +6,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
+import logo from "../../images/logo.svg";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 
@@ -22,7 +23,7 @@ export const NavLinks = tw.div`inline-block`;
 export const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
   font-semibold tracking-wide transition duration-300
-  pb-1 border-b-2 border-transparent hover:border-indigo-500 hocus:text-gray-500
+  pb-1 border-b-2 border-transparent hover:border-gray-500 hocus:text-gray-500
 `;
 
 export const PrimaryLink = tw(NavLink)`
@@ -33,7 +34,7 @@ export const PrimaryLink = tw(NavLink)`
 `;
 
 export const LogoLink = styled(NavLink)`
-  ${tw`flex items-center font-black border-b-0 text-2xl! ml-0!`};
+  ${tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-blue-900`};
 
   img {
     ${tw`w-10 mr-3`}
@@ -45,7 +46,7 @@ export const NavToggle = tw.button`
   lg:hidden z-20 focus:outline-none hocus:text-gray-500 transition duration-300
 `;
 export const MobileNavLinks = motion.custom(styled.div`
-  ${tw`lg:hidden z-10 fixed top-0 inset-x-0 mx-4 my-6 p-8 border text-center rounded-lg text-gray-900 bg-white`}
+  ${tw`lg:hidden z-10 fixed top-0 inset-x-0 mx-4 my-6 p-8 border text-center rounded-lg text-blue-900 bg-white`}
   ${NavLinks} {
     ${tw`flex flex-col items-center`}
   }
@@ -74,15 +75,14 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
       <NavLink href="/#">About</NavLink>
       <NavLink href="/#">Portfolio</NavLink>
       <NavLink href="/#">Contact</NavLink>
-      </NavLinks>
+     </NavLinks>
   ];
 
   const { showNavLinks, animation, toggleNavbar } = useAnimatedNavToggler();
   const collapseBreakpointCss = collapseBreakPointCssMap[collapseBreakpointClass];
 
   const defaultLogoLink = (
-    <LogoLink href="/">
-      Bri Ewell
+    <LogoLink> Bri Ewell
     </LogoLink>
   );
 

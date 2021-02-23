@@ -43,3 +43,25 @@
   background-size: cover;
   position: relative;
 }
+
+button { 
+  display: block; 
+  border-radius: 5em; 
+  box-sizing: border-box; 
+  text-decoration: none; 
+  
+  color: white; 
+  background-color:lightslategray;  
+  text-align: center; 
+  font-size: 15px; 
+  transition: all 0.2s; 
+  width: 30%; 
+  height: 30px; 
+}
+
+button:hover {
+  color: black; 
+  cursor:pointer; 
+  transform: scale(1.03); 
+}
+
